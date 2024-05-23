@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Data Generator for Protein Stability</title>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <h1>Synthetic Data Generator for mAbs</h1>
+    <p style="color: red;"><strong>Note:</strong> Please ensure pop-ups are enabled in your browser to view the generated plots.</p>
+    <form id="dataForm" action="/generate" method="post" target="plotWindow" onsubmit="openPlotWindow('about:blank')">
+        <label for="time_points">Time Points (comma-separated, 3 to 12 data points up to 6 months):</label><br>
+        <input type="text" id="time_points" name="time_points" value="0,1,2,3,4,5"><br><br>
+        
+        <label for="temperature1_C">Temperature 1 (°C):</label><br>
+        <input type="number" id="temperature1_C" name="temperature1_C" value="5"><br><br>
+        
+        <label for="temperature2_C">Temperature 2 (°C):</label><br>
+        <input type="number" id="temperature2_C" name="temperature2_C" value="25"><br><br>
+        
+        <label for="temperature3_C">Temperature 3 (°C):</label><br>
+        <input type="number" id="temperature3_C" name="temperature3_C" value="40"><br><br>
+        
+        <label for="final_month">Final Month for Prediction:</label><br>
+        <input type="number" id="final_month" name="final_month" value="36"><br><br>
+        
+        <label for="Ea_mean">Ea Mean:</label><br>
+        <input type="number" id="Ea_mean" name="Ea_mean" value="75000"><br><br>
+        
+        <label for="Ea_std">Ea Std:</label><br>
+        <input type="number" id="Ea_std" name="Ea_std" value="5000"><br><br>
+        
+        <label for="k_ref_mean">k_ref Mean:</label><br>
+        <input type="number" step="1e-5" id="k_ref_mean" name="k_ref_mean" value="0.0001"><br><br>
+        
+        <label for="k_ref_std">k_ref Std:</label><br>
+        <input type="number" step="1e-6" id="k_ref_std" name="k_ref_std" value="0.00001"><br><br>
+        
+        <label for="initial_value">Initial Value:</label><br>
+        <input type="number" id="initial_value" name="initial_value" value="30"><br><br>
+        
+        <label for="noise_level">Noise Level:</label><br>
+        <input type="number" step="0.01" id="noise_level" name="noise_level" value="0.02"><br><br>
+        
+        <label for="n_simulations">Number of Simulations:</label><br>
+        <input type="number" id="n_simulations" name="n_simulations" value="400"><br><br>
+        
+        <input type="submit" value="Generate Synthetic Data">
+    </form>
+</body>
+</html>
