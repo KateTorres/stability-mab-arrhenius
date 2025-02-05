@@ -112,8 +112,10 @@ def plot_results(time_points, degradation, fit_params, prediction_intervals, tem
 def index():
     return render_template('index.html')
 
-@app.route('/generate', methods=['POST'])
+@app.route('/generate', methods=['GET', 'POST'])  # UPDATED: Added 'GET' method
 def generate():
+    if request.method == 'GET':  # UPDATED: Added check for GET requests
+        return "Please submit the form via POST."  # UPDATED: Return a message for GET requests
     try:
         # Get form data
         time_points = np.array([float(x) for x in request.form['time_points'].split(',')])

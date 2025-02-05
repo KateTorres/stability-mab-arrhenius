@@ -8,7 +8,9 @@
 </head>
 <body>
     <h1>Synthetic Data Generator for mAbs</h1>
-    <p style="color: red;"><strong>Note:</strong> Please ensure pop-ups are enabled in your browser to view the generated plots.</p>
+    <div class="alert alert-danger" role="alert">
+        <strong>Note:</strong> Please ensure pop-ups are enabled in your browser to view the generated plots.
+      </div>
     <form id="dataForm" action="/generate" method="post" target="plotWindow" onsubmit="openPlotWindow('about:blank')">
         <label for="time_points">Time Points (comma-separated, 3 to 12 data points up to 6 months):</label><br>
         <input type="text" id="time_points" name="time_points" value="0,1,2,3,4,5"><br><br>
@@ -47,6 +49,8 @@
         <input type="number" id="n_simulations" name="n_simulations" value="400"><br><br>
         
         <input type="submit" value="Generate Synthetic Data">
+    
     </form>
+    
 </body>
 </html>
