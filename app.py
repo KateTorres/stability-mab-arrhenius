@@ -172,5 +172,10 @@ def generate():
         logging.error(f'Error generating synthetic data: {e}')
         return str(e)
 
+# Download csv file by the user 
+@app.route('/download')
+def download_csv():
+    return send_file('static/synthetic_data.csv', as_attachment=True, download_name='simulated_data.csv')
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
