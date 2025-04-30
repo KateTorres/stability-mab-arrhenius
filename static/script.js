@@ -1,4 +1,4 @@
 function openPlotWindow(url) {
-    var win = window.open(url, '_blank');
+//  var win = window.open(url, '/static/plot.png');
     win.focus();
 }
