@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file, url_for
 import pandas as pd
 import numpy as np
 from scipy.optimize import curve_fit
@@ -166,11 +166,11 @@ def generate():
         csv_path = 'static/synthetic_data.csv'
         df.to_csv(csv_path, index=False)
 
-        return render_template('result.html', plot_url=plot_path)
+        return render_template('result.html', plot_url=url_for('static', filename='plot.png'))
 
     except Exception as e:
         logging.error(f'Error generating synthetic data: {e}')
         return str(e)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
