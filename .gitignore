@@ -1,0 +1,17 @@
+#Ignore Python virtual environments
+venv/
+venv-flask/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+
+# Logs and temporary files
+*.log
+
+#VS Code settings
+.vscode/
+
+# Local coding files
+.env
