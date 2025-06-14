@@ -40,3 +40,14 @@ result.html: HTML template for displaying the generated plot.
 script.js: JavaScript file for handling pop-up windows.
 style.css: CSS file for styling the HTML templates.
 requirements.txt: List of Python dependencies required for the project.
+
+## Instructions for Docker
+cd to the same directory as the dockerfile
+- Build docker: 
+docker build --no-cache -t flask-stability-app .
+
+- Run docker for flask-stability-app: 
+docker run -p 5000:5000 flask-stability-app
+
+- View in browser: 
+localhost:5000
